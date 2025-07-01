@@ -57,9 +57,9 @@ const Hero: React.FC = () => {
         {/* Top-right profile image for large screens */}
         <motion.img
           variants={itemVariants}
-          src="/me.jpg"
+          src="/deepthi.png"
           alt="Profile"
-          className="hidden lg:block absolute top-0 right-[-24rem] w-[32rem] h-[32rem] object-cover rounded-full shadow-2xl border-[16px] border-primary-500 bg-white z-20"
+          className="block mx-auto mb-8 w-48 h-48 object-cover rounded-full shadow-2xl border-8 border-primary-500 bg-white z-20"
         />
         <div className="flex flex-col items-center justify-center gap-12 pt-12 lg:pt-32">
           {/* Greeting, Name, Title, etc. */}
