@@ -9,6 +9,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown, Download, Mail } from 'lucide-react';
+import profileImg from '../assets/deepthi.png';
 
 const Hero: React.FC = () => {
   const scrollToAbout = () => {
@@ -42,7 +43,7 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-24 md:pt-32">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary-50 to-secondary-50 dark:from-gray-900 dark:to-gray-800">
         <div 
@@ -53,21 +54,27 @@ const Hero: React.FC = () => {
         ></div>
       </div>
 
-      <div className="container-custom relative z-10 min-h-[60vh]">
-        {/* Top-right profile image for large screens */}
-        <motion.img
+      <div className="container-custom relative z-10 min-h-[60vh] flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-24">
+        {/* Profile Image */}
+        <motion.div
           variants={itemVariants}
-          src="/deepthi.png"
-          alt="Profile"
-          className="block mx-auto mb-8 w-48 h-48 object-cover rounded-full shadow-2xl border-8 border-primary-500 bg-white z-20"
-        />
-        <div className="flex flex-col items-center justify-center gap-12 pt-12 lg:pt-32">
-          {/* Greeting, Name, Title, etc. */}
+          initial="hidden"
+          animate="visible"
+          className="flex-shrink-0"
+        >
+          <img
+            src={profileImg}
+            alt="Profile"
+            className="mx-auto w-32 h-32 sm:w-40 sm:h-40 md:w-56 md:h-56 lg:w-64 lg:h-64 object-cover rounded-full shadow-2xl border-8 border-primary-500 bg-white"
+          />
+        </motion.div>
+        {/* Text Content */}
+        <div className="flex flex-col items-center lg:items-start justify-center gap-8 w-full">
           <motion.div
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="text-center px-4"
+            className="text-center lg:text-left px-4"
           >
             {/* Greeting */}
             <motion.div variants={itemVariants} className="mb-4">
@@ -105,7 +112,7 @@ const Hero: React.FC = () => {
             {/* CTA Buttons */}
             <motion.div
               variants={itemVariants}
-              className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
+              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-16"
             >
               <motion.button
                 whileHover={{ scale: 1.05 }}
@@ -128,26 +135,26 @@ const Hero: React.FC = () => {
             </motion.div>
           </motion.div>
         </div>
-
-        {/* Scroll Indicator */}
-        <motion.div
-          variants={itemVariants}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        >
-          <motion.button
-            onClick={scrollToAbout}
-            whileHover={{ y: 5 }}
-            className="text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
-          >
-            <motion.div
-              animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            >
-              <ChevronDown size={24} />
-            </motion.div>
-          </motion.button>
-        </motion.div>
       </div>
+
+      {/* Scroll Indicator */}
+      <motion.div
+        variants={itemVariants}
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+      >
+        <motion.button
+          onClick={scrollToAbout}
+          whileHover={{ y: 5 }}
+          className="text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
+        >
+          <motion.div
+            animate={{ y: [0, 10, 0] }}
+            transition={{ duration: 2, repeat: Infinity }}
+          >
+            <ChevronDown size={24} />
+          </motion.div>
+        </motion.button>
+      </motion.div>
 
       {/* Floating Elements */}
       <motion.div
