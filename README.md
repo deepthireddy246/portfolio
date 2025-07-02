@@ -141,10 +141,9 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 📞 Contact
 
-- **Email**: deepthi.kallam@email.com
+- **Email**: deepti.r@careernb.com
 - **LinkedIn**: [Deepthi Reddy Kallam](https://www.linkedin.com/in/deepthi-reddy-kallam-b8b213357/)
 - **GitHub**: [@deepthireddy246](https://github.com/deepthireddy246)
 
 ---
 
-Made with ❤️ by Deepthi Reddy Kallam
