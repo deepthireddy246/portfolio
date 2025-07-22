@@ -24,6 +24,8 @@ interface Project {
 
 const Projects: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [activeCategory, setActiveCategory] = useState<'all' | 'web' | 'mobile' | 'fullstack'>('all');
+
   const projects: Project[] = [
     {
       id: 1,
@@ -60,7 +62,16 @@ const Projects: React.FC = () => {
     }
   ];
 
+  const categories = [
+    { id: 'all', name: 'All Projects' },
+    { id: 'web', name: 'Web Apps' },
+    { id: 'mobile', name: 'Mobile Apps' },
+    { id: 'fullstack', name: 'Full Stack' }
+  ];
 
+  const filteredProjects = projects.filter(project => 
+    activeCategory === 'all' || project.category === activeCategory
+  );
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -105,7 +116,27 @@ const Projects: React.FC = () => {
             className="w-24 h-1 bg-gradient-to-r from-primary-600 to-secondary-600 mx-auto mb-8"
           />
           
-
+          {/* Category Filter */}
+          <motion.div
+            variants={itemVariants}
+            className="flex flex-wrap justify-center gap-4 mb-12"
+          >
+            {categories.map((category) => (
+              <motion.button
+                key={category.id}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setActiveCategory(category.id as any)}
+                className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${
+                  activeCategory === category.id
+                    ? 'bg-primary-600 text-white shadow-lg'
+                    : 'bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600'
+                }`}
+              >
+                {category.name}
+              </motion.button>
+            ))}
+          </motion.div>
         </motion.div>
 
         {/* Projects Grid */}
@@ -116,7 +147,7 @@ const Projects: React.FC = () => {
           viewport={{ once: true, amount: 0.3 }}
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {projects.map((project) => (
+          {filteredProjects.map((project) => (
             <motion.div
               key={project.id}
               variants={itemVariants}
@@ -173,7 +204,31 @@ const Projects: React.FC = () => {
                   )}
                 </div>
 
-
+                {/* Project Links */}
+                <div className="flex gap-3">
+                  <motion.a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="flex-1 flex items-center justify-center gap-2 bg-gray-100 dark:bg-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-500 py-2 rounded-lg transition-colors duration-200"
+                  >
+                    <Github size={16} />
+                    Code
+                  </motion.a>
+                  <motion.a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="flex-1 flex items-center justify-center gap-2 bg-primary-600 text-white hover:bg-primary-700 py-2 rounded-lg transition-colors duration-200"
+                  >
+                    <ExternalLink size={16} />
+                    Live
+                  </motion.a>
+                </div>
               </div>
             </motion.div>
           ))}
