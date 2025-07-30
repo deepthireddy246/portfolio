@@ -1,16 +1,15 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.8d03b7fa.css",
-    "main.js": "/portfolio/static/js/main.4ee1dd0b.js",
-    "static/js/453.ca56b415.chunk.js": "/portfolio/static/js/453.ca56b415.chunk.js",
-    "static/media/deepthi.png": "/portfolio/static/media/deepthi.bdd3fd1768c41e2382cc.png",
-    "index.html": "/portfolio/index.html",
-    "main.8d03b7fa.css.map": "/portfolio/static/css/main.8d03b7fa.css.map",
-    "main.4ee1dd0b.js.map": "/portfolio/static/js/main.4ee1dd0b.js.map",
-    "453.ca56b415.chunk.js.map": "/portfolio/static/js/453.ca56b415.chunk.js.map"
+    "main.css": "/deepthi_kallam_portfolio/static/css/main.1dd8bcd1.css",
+    "main.js": "/deepthi_kallam_portfolio/static/js/main.9c8a1df9.js",
+    "static/js/453.ca56b415.chunk.js": "/deepthi_kallam_portfolio/static/js/453.ca56b415.chunk.js",
+    "index.html": "/deepthi_kallam_portfolio/index.html",
+    "main.1dd8bcd1.css.map": "/deepthi_kallam_portfolio/static/css/main.1dd8bcd1.css.map",
+    "main.9c8a1df9.js.map": "/deepthi_kallam_portfolio/static/js/main.9c8a1df9.js.map",
+    "453.ca56b415.chunk.js.map": "/deepthi_kallam_portfolio/static/js/453.ca56b415.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8d03b7fa.css",
-    "static/js/main.4ee1dd0b.js"
+    "static/css/main.1dd8bcd1.css",
+    "static/js/main.9c8a1df9.js"
   ]
 }
