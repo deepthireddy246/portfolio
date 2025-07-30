@@ -204,31 +204,7 @@ const Projects: React.FC = () => {
                   )}
                 </div>
 
-                {/* Project Links */}
-                <div className="flex gap-3">
-                  <motion.a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="flex-1 flex items-center justify-center gap-2 bg-gray-100 dark:bg-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-500 py-2 rounded-lg transition-colors duration-200"
-                  >
-                    <Github size={16} />
-                    Code
-                  </motion.a>
-                  <motion.a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="flex-1 flex items-center justify-center gap-2 bg-primary-600 text-white hover:bg-primary-700 py-2 rounded-lg transition-colors duration-200"
-                  >
-                    <ExternalLink size={16} />
-                    Live
-                  </motion.a>
-                </div>
+
               </div>
             </motion.div>
           ))}

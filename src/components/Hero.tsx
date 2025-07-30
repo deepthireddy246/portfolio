@@ -54,13 +54,7 @@ const Hero: React.FC = () => {
       </div>
 
       <div className="container-custom relative z-10 min-h-[60vh]">
-        {/* Top-right profile image for large screens */}
-        <motion.img
-          variants={itemVariants}
-          src="/me.jpg"
-          alt="Profile"
-          className="hidden lg:block absolute top-0 right-[-24rem] w-[32rem] h-[32rem] object-cover rounded-full shadow-2xl border-[16px] border-primary-500 bg-white z-20"
-        />
+
         <div className="flex flex-col items-center justify-center gap-12 pt-12 lg:pt-32">
           {/* Greeting, Name, Title, etc. */}
           <motion.div
