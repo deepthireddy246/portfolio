@@ -2,7 +2,7 @@
   "name": "deepthi-kallam-portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://deepthi.github.io/deepthi_kallam_portfolio",
+  "homepage": "https://deepthireddy246.github.io/portfolio",
   "dependencies": {
     "@tailwindcss/typography": "^0.5.10",
     "@testing-library/dom": "^10.4.0",
